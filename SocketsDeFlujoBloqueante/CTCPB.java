@@ -1,31 +1,49 @@
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.net.Socket;
+import java.io.OutputStreamWriter;
+import java.io.PrintWriter;
 
 public class CTCPB {
     public static void main(String[] args) {
-        // SIEMPRE PONER EL SOCKET EN UN TRY-CATCH
+        Cliente();
+    }
+
+    public static void Cliente() {
+        /* SIEMPRE PONER EL SOCKET EN UN TRY-CATCH */
         try {
-            BufferedReader br1 = new BufferedReader(new InputStreamReader(System.in));
-            System.out.println("Escribe la direccion del servidor:");
-            String host = br1.readLine();
-            System.out.printf("\nEscriba el puerto:");
-            int port = Integer.parseInt(br1.readLine());
+            /* PREPARAMOS LOS DATOS DE LA CONEXION */
+            /*
+             * BufferedReader teclado = new BufferedReader(new
+             * InputStreamReader(System.in));
+             * System.out.println("Escribe la direccion del servidor:"); String host =
+             * teclado.readLine(); System.out.printf("\nEscriba el puerto:"); int port =
+             * Integer.parseInt(teclado.readLine());
+             */
 
-            // CERRAMOS EL SOCKET
-            Socket cl = new Socket(host, port);
-            BufferedReader br2 = new BufferedReader(new InputStreamReader(cl.getInputStream()));
+            /* CERRAMOS EL SOCKET DEL LADO DEL CLIENTE */
+            // Socket socketCliente = new Socket(host, port);
+            Socket socketCliente = new Socket("127.0.0.1", 1234);
 
-            // NOS CONECTAMOS
-            String mensaje = br2.readLine();
+            /* OBTENEMOS EL CANAL DE ENTRADA */
+            BufferedReader entrada = new BufferedReader(new InputStreamReader(socketCliente.getInputStream()));
+
+            /* OBTENEMOS EL CANAL DE SALIDA */
+            PrintWriter salida = new PrintWriter(new OutputStreamWriter(socketCliente.getOutputStream()));
+
+            String mensaje = "Hola servidor, soy el cliente";
+            salida.println(mensaje);
+
+            mensaje = entrada.readLine();
             System.out.println("Recibimos un mensaje del servidor");
             System.out.println("Mensaje: " + mensaje);
 
             // SE LIMPIA EL FLUJO EN ORDEN
-            br1.close();
-            br2.close();
-            cl.close();
-
+            salida.flush();
+            salida.close();
+            // teclado.close();
+            entrada.close();
+            socketCliente.close();
         } catch (Exception e) {
             e.printStackTrace();
         }
