@@ -31,26 +31,22 @@ public class STCPB {
                 /* OBTENEMOS EL CANAL DE SALIDA */
                 PrintWriter salida = new PrintWriter(new OutputStreamWriter(socketCliente.getOutputStream()));
 
+                /* RECIBIMOS INFORMACION DEL CLIENTE */
+                String infoCliente = entrada.readLine();
+                System.out.println("Recibimos un mensaje del cliente");
+                System.out.println("Mensaje: " + infoCliente);
+
                 /* ENVIAMOS INFORMACION AL CLIENTE */
-
-                /*
-                 * String mensaje = entrada.readLine();
-                 * System.out.println("Recibimos un mensaje del servidor");
-                 * System.out.println("Mensaje: " + mensaje);
-                 */
-                String mensaje = "Hola cliente, soy el servidor";
-                salida.println(mensaje);
-
-                // String res = entrada.readLine();
-                // System.out.println("Recibimos un mensaje del cliente");
-                // System.out.println("Mensaje: " + res);
+                System.out.println("Enviando respuesta...");
+                String resCliente = "Hola cliente, soy el servidor.";
+                salida.println(resCliente);
 
                 // SE LIMPIA EL FLUJO EN ORDEN
                 salida.flush();
                 salida.close();
                 entrada.close();
                 socketCliente.close();
-                // socketServidor.close();
+                //NOTA: EL SOCKET DEL SERVIDOR NUNCA SE CIERRA socketServidor.close();
             }
         } catch (Exception e) {
             e.printStackTrace();

@@ -13,17 +13,14 @@ public class CTCPB {
         /* SIEMPRE PONER EL SOCKET EN UN TRY-CATCH */
         try {
             /* PREPARAMOS LOS DATOS DE LA CONEXION */
-            /*
-             * BufferedReader teclado = new BufferedReader(new
-             * InputStreamReader(System.in));
-             * System.out.println("Escribe la direccion del servidor:"); String host =
-             * teclado.readLine(); System.out.printf("\nEscriba el puerto:"); int port =
-             * Integer.parseInt(teclado.readLine());
-             */
+            BufferedReader teclado = new BufferedReader(new InputStreamReader(System.in));
+            System.out.println("Escribe la direccion del servidor:");
+            String host = teclado.readLine();
+            System.out.printf("\nEscriba el puerto:");
+            int port = Integer.parseInt(teclado.readLine());
 
             /* CERRAMOS EL SOCKET DEL LADO DEL CLIENTE */
-            // Socket socketCliente = new Socket(host, port);
-            Socket socketCliente = new Socket("127.0.0.1", 1234);
+            Socket socketCliente = new Socket(host, port);
 
             /* OBTENEMOS EL CANAL DE ENTRADA */
             BufferedReader entrada = new BufferedReader(new InputStreamReader(socketCliente.getInputStream()));
@@ -31,9 +28,13 @@ public class CTCPB {
             /* OBTENEMOS EL CANAL DE SALIDA */
             PrintWriter salida = new PrintWriter(new OutputStreamWriter(socketCliente.getOutputStream()));
 
-            String mensaje = "Hola servidor, soy el cliente";
+            /* ENVIAMOS INFORMACION AL SERVIDOR */
+            System.out.println("Enviando saludo...");
+            String mensaje = "Hola servidor, soy el cliente.";
             salida.println(mensaje);
+            salida.flush();// Lo que faltaba ;)
 
+            /* RECIBIMOS INFORMACION DEL SERVIDOR */
             mensaje = entrada.readLine();
             System.out.println("Recibimos un mensaje del servidor");
             System.out.println("Mensaje: " + mensaje);
@@ -41,7 +42,7 @@ public class CTCPB {
             // SE LIMPIA EL FLUJO EN ORDEN
             salida.flush();
             salida.close();
-            // teclado.close();
+            teclado.close();
             entrada.close();
             socketCliente.close();
         } catch (Exception e) {
