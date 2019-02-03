@@ -1,3 +1,6 @@
+
+/* ALUMNO: HERNANDEZ TAPIA LUIS ENRIQUE */
+
 import java.io.BufferedReader;
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
@@ -19,12 +22,12 @@ public class STCPBArchivo {
             System.out.println("Esperando cliente...");
 
             while (true) {
-                /* BLOQUEO HASTA QUE RECIBA ALGUNA PETICION DEL CLIENTE */
+                /* HASTA QUE RECIBA ALGUNA PETICION DEL CLIENTE */
                 Socket socketCliente = socketServidor.accept();
                 System.out.println(
                         "Conexion establecida desde " + socketCliente.getInetAddress() + ":" + socketCliente.getPort());
 
-                /* ESTABLECEMOS EL CANAL DE ENTRADA */
+                /* ESTABLECEMOS EL CANAL DE ENTRADA DE TIPO BUFFERED */
                 BufferedReader in = new BufferedReader(new InputStreamReader(socketCliente.getInputStream()));
                 int cantidad = Integer.parseInt(in.readLine());
                 System.out.print("\nCantidad de archivos que se recibien: ");
@@ -32,18 +35,19 @@ public class STCPBArchivo {
 
                 for (int i = 0; i < cantidad; i++) {
 
+                    /* ESTABLECEMOS EL CANAL DE ENTRADA DE TIPO DATA */
                     DataInputStream entrada = new DataInputStream(socketCliente.getInputStream());
                     byte[] b = new byte[1024];
                     String nombre = entrada.readUTF();
                     System.out.println("Recibiendo el archivo: " + nombre);
                     long tam = entrada.readLong();
 
-                    /* ESTABLECEMOS EL CANAL DE SALIDA */
+                    /* ESTABLECEMOS EL CANAL DE SALIDA DE TIPO DATA */
                     DataOutputStream salida = new DataOutputStream(new FileOutputStream(nombre));
 
                     /* SECCION PARA RECIBIR EL ARCHIVO */
                     long recibido = 0;
-                    int n, porcentaje;
+                    int n = 0, porcentaje = 0;
 
                     while (recibido < tam) {
                         n = entrada.read(b);
@@ -55,8 +59,11 @@ public class STCPBArchivo {
                         porcentaje = (int) (recibido * 100 / tam);
                         System.out.println("Recibido: " + porcentaje + "%\r");
                     }
-                    System.out.println("Archivo recibido.");
 
+                    /* CONCLUIMOS CON EL ARCHVIO i */
+                    System.out.println("Archivo " + nombre + " recibido.");
+
+                    /* SOLO CERRAMOS CUANDO SE RECIBAN TODOS */
                     if (i == cantidad - 1) {
                         salida.close();
                         entrada.close();

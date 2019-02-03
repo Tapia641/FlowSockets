@@ -1,3 +1,6 @@
+
+/* ALUMNO: HERNANDEZ TAPIA LUIS ENRIQUE */
+
 import java.io.BufferedReader;
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
@@ -24,7 +27,7 @@ public class CTCPBArchivo {
             System.out.println("Escriba el puerto: ");
             int port = Integer.parseInt(teclado.readLine());
 
-            /* CERRAMOS EL SOCKET DEL LADO DEL CLIENTE */
+            /* SOCKET DEL LADO DEL CLIENTE */
             Socket socketCliente = new Socket(host, port);
 
             /* ACTIVAMOS MULTIPLE SELECCION */
@@ -39,25 +42,26 @@ public class CTCPBArchivo {
                 File[] f = jf.getSelectedFiles();
 
                 /* ENVIAMOS CANTIDAD DE ARCHIVOS */
-
-                /* OBTENEMOS EL CANAL DE SALIDA */
+                /* OBTENEMOS EL CANAL DE SALIDA DE TIPO PRINT */
                 PrintWriter out = new PrintWriter(new OutputStreamWriter(socketCliente.getOutputStream()));
                 System.out.println("Enviando cantidad de archivos...");
                 out.println(f.length);
                 out.flush();
 
                 for (int i = 0; i < f.length; i++) {
+
                     /* OBTENEMOS DATOS DE CADA ARCHIVO */
                     String archivo = f[i].getAbsolutePath();
                     String nombre = f[i].getName();
                     long tam = f[i].length();
 
-                    /* OBTENEMOS EL CANAL DE ENTRADA */
+                    /* OBTENEMOS EL CANAL DE ENTRADA DE TIPO DATA */
                     DataInputStream entrada = new DataInputStream(new FileInputStream(archivo));
 
-                    /* OBTENEMOS EL CANAL DE SALIDA */
+                    /* OBTENEMOS EL CANAL DE SALIDA DE TIPO DATA */
                     DataOutputStream salida = new DataOutputStream(socketCliente.getOutputStream());
 
+                    /* ENVIAMOS NOMBRE Y TAM */
                     salida.writeUTF(nombre);
                     salida.flush();
                     salida.writeLong(tam);
@@ -66,7 +70,7 @@ public class CTCPBArchivo {
                     /* SECCION PARA EL ENVIO DEL ARCHIVO */
                     byte[] b = new byte[1024];
                     long enviado = 0;
-                    int porcentaje, n;
+                    int porcentaje = 0, n = 0;
 
                     /* CALCULAMOS EL PORCENTAJE */
                     while (enviado < tam) {
@@ -78,7 +82,10 @@ public class CTCPBArchivo {
                         System.out.println("Enviado: " + porcentaje + "%\r");
                     }
 
-                    System.out.println("Archivo enviado");
+                    /* CONCLUIMOS CON EL ARCHVIO i */
+                    System.out.println("Archivo " + f[i].getName() + " enviado.");
+
+                    /* SOLO CERRAMOS CUANDO SE ENVIEN TODOS */
                     if (i == f.length - 1) {
                         salida.close();
                         entrada.close();
