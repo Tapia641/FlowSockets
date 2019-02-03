@@ -1,9 +1,10 @@
+import java.io.BufferedReader;
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.FileOutputStream;
+import java.io.InputStreamReader;
 import java.net.ServerSocket;
 import java.net.Socket;
-
 import javax.swing.JOptionPane;
 
 public class STCPBArchivo {
@@ -24,34 +25,44 @@ public class STCPBArchivo {
                         "Conexion establecida desde " + socketCliente.getInetAddress() + ":" + socketCliente.getPort());
 
                 /* ESTABLECEMOS EL CANAL DE ENTRADA */
-                DataInputStream entrada = new DataInputStream(socketCliente.getInputStream());
-                byte[] b = new byte[1024];
-                String nombre = entrada.readUTF();
-                System.out.println("Recibimos el archivo " + nombre);
-                long tam = entrada.readLong();
-                DataOutputStream salida = new DataOutputStream(new FileOutputStream(nombre));
+                BufferedReader in = new BufferedReader(new InputStreamReader(socketCliente.getInputStream()));
+                int cantidad = Integer.parseInt(in.readLine());
+                System.out.print("\nCantidad de archivos que se recibien: ");
+                System.out.print(cantidad + "\n");
 
-                /* SECCION PARA RECIBIR EL ARCHIVO */
-                long recibido = 0;
-                int n, porcentaje;
+                for (int i = 0; i < cantidad; i++) {
 
-                n = entrada.read(b);
-                JOptionPane.showMessageDialog(null, n);
-                
-                while (recibido < tam) {
-                    n = entrada.read(b);
-                    salida.write(b, 0, n);
-                    salida.flush();
+                    DataInputStream entrada = new DataInputStream(socketCliente.getInputStream());
+                    byte[] b = new byte[1024];
+                    String nombre = entrada.readUTF();
+                    System.out.println("Recibiendo el archivo: " + nombre);
+                    long tam = entrada.readLong();
 
-                    /* PORCENTAJE */
-                    recibido += n;
-                    porcentaje = (int) (recibido * 100 / tam);
-                    System.out.println("Recibido: " + porcentaje + "%\r");
+                    /* ESTABLECEMOS EL CANAL DE SALIDA */
+                    DataOutputStream salida = new DataOutputStream(new FileOutputStream(nombre));
+
+                    /* SECCION PARA RECIBIR EL ARCHIVO */
+                    long recibido = 0;
+                    int n, porcentaje;
+
+                    while (recibido < tam) {
+                        n = entrada.read(b);
+                        salida.write(b, 0, n);
+                        salida.flush();
+
+                        /* PORCENTAJE */
+                        recibido += n;
+                        porcentaje = (int) (recibido * 100 / tam);
+                        System.out.println("Recibido: " + porcentaje + "%\r");
+                    }
+                    System.out.println("Archivo recibido.");
+
+                    if (i == cantidad - 1) {
+                        salida.close();
+                        entrada.close();
+                    }
                 }
-
-                System.out.println("Archivo recibido.");
-                salida.close();
-                entrada.close();
+                in.close();
                 socketCliente.close();
             }
         } catch (
