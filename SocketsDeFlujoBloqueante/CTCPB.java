@@ -1,7 +1,5 @@
 
-/*
-ALUMNO: HERNANDEZ TAPIA LUIS ENRIQUE
- */
+/* ALUMNO: HERNANDEZ TAPIA LUIS ENRIQUE */
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
