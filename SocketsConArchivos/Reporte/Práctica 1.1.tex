@@ -92,7 +92,7 @@ backgroundcolor=\color{gray75},
 \bigskip
 
 %------------------------------------------------------
-\textbf{Resumen:} En esta pr\'actica se desarrolla una plicaci\'on para seleccionar m\'ultiples archivos y enviarlos a trav\'es del protocolo TCP \newline.
+\textbf{Resumen:} En esta pr\'actica se desarrolla una aplicaci\'on para seleccionar m\'ultiples archivos y enviarlos a trav\'es del protocolo TCP. \newline.
 %------------------------------------------------------
 \textbf{\newline Palabras clave:} TCP, IP, Sockets de flujo.
 %------------------------------------------------------
@@ -109,142 +109,146 @@ Esto hace necesario el desarrollo de aplicaciones que permitan transferir archiv
 %------------------------------------------------------
 
 
-\section{Conceptos B\'asicos}
-A continuaci\'on se presentan algunas definiciones para que al lector le sea comprensible el tema en cuesti\'on.\newline
-\newline
-{\bf Notaci\'on $\Theta$:} 
-En todo lo que sigue consideramos funciones definidas sobre $\mathbb{N}$
-$\bigcup$  \{0\}. Sea g(n) una funci\'on. Se define $\theta$(g(n)) como: \newline $\theta$(g(n))= $\lbrace f(n)$ $\vert$ $\exists_{n}$ $C_{1}$, $C_{2}>0$ y $n_{o}=0$ tal que
-$0\leq C_{1}g(n) \leq f(n )\leq C_{2}g(n)$ $\forall n\geq n_{o}$\} 
-\newline \newline
-{\bf Notaci\'on $O$:} Dada una funci\'on g(n). Se define $O$(g(n)) como: \newline $O$(g(n))= $\lbrace f(n)$ $\vert$ $\exists_{n}$ $C_{1}>0$ y $n_{o}>0$ tal que $0\leq f(n ) \leq C_{1}g(n)$ $\forall n\geq n_{o}$\} 
-\newline \newline
-{\bf Notaci\'on $\Omega$:} Dada una funci\'on g(n). Se define $\Omega$(g(n)) como: \newline $\Omega$(g(n))= $\lbrace f(n)$ $\vert$ $\exists_{n}$ $C_{1}>0$ y $n_{o}>0$ tal que $0\leq C_{1}g(n)\leq f(n ) $ $\forall n\geq n_{o}$\}
-\newline \newline 
+\section{Desarrollo}
 
+A partir de los programas \textbf{CArchivo} y \textbf{SArchivo} que te ser\'an proporcionados por el profesor deber\'as realizar los siguientes programas: \newline\newline 
 
-%------------------------------------------------------
-
-\textbf{\newline C\'odigo de Huffman:}
-\newline
-El algoritmo de Huffman es usado en la compresi\'on de datos. Puesto es capaz de representar un conjunto de s\'imbolos obtenidos a partir de cierto alfabeto, usando el menor n\'umero de bits posible, pero preservando en todo momento la capacidad de descomprimir o decodificar la informaci\'on \newline \newline
-El algoritmo se propuso en 1952 como una forma sencilla y \'optima de mapear cada s\'imbolo de un alfabeto con un c\'odigo de longitud \'optima. El proceso de asignaci\'on de c\'odigos se lleva a cabo mediante la construcci\'on de un \'arbol binario, desde las hojas hacia la ra\'iz, de manera que los nodos hojas son los s\'imbolos del alfabeto. A continuaci\'on un ejemplo gr\'afico.
-
-Precedemos a comprimir la siguiente cadena de car\'acteres.
-\begin{center}
-\begin{tabular}[t]{|l |c |r |r |r |r |}
-\hline
-L & a & p & t & o & p\\
-\hline
-\end{tabular}
-\end{center}
-\newpage
-Enseguida se crea su tabla de frecuencias.
-
-\begin{table}[htbp]
-\begin{center}
-\begin{tabular}{|l|l|}
-\hline
-Cr\'acter & Frecuencia \\
-\hline \hline
-L &  1 \\ \hline
-a &  1 \\ \hline
-p &  2 \\ \hline
-t &  1 \\ \hline
-o &  1 \\ \hline
-\end{tabular}
-\caption{Tabla de frecuencia}
-\label{tabla:Tabla1}
-\end{center}
-\end{table}
-
-Ordenamos de forma ascendente con \textit{QuickSort}
-
-\begin{table}[htbp]
-\begin{center}
-\begin{tabular}{|l|l|}
-\hline
-Cr\'acter & Frecuencia \\
-\hline \hline
-L &  1 \\ \hline
-a &  1 \\ \hline
-t &  1 \\ \hline
-o &  1 \\ \hline
-p &  2 \\ \hline
-\end{tabular}
-\caption{Tabla de frecuencia ordenada}
-\label{tabla:Tabla1}
-\end{center}
-\end{table}
-
-Insertamos en una lista enlazada de \'arboles los car\'acteres con su n\'umero de frecuencia.
-%\begin{figure}[h]
-%	\centering
-%\includegraphics[width=1\textwidth]{img/1.png}
-%	\caption{Paso 1 del la codifiaci\'on de Huffman.}
-%\end{figure}
-Tomamos los dos primeros nodos y creamos un \'arbol con ellos donde la ra\'iz ser\'a la suma de la frecuencia de ambos. El nodo de la izquierda ser\'a el primero que tomamos y el de la derecha el segundo.\newline
-
-El resultado es: \textbf{11011110000110\\}
-
-
-%------------------------------------------------------
-
-
-\newpage
-\textbf{\newline QuickSort:\newline }
-
-Fue desarrollado por C.A.R. Hoare en 1960. El algoritmo original es recursivo, pero se utilizan versiones iterativas para mejorar su rendimiento (los algoritmos recursivos son en general más lentos que los iterativos, y consumen más recursos). El algoritmo fundamental es el siguiente:
+\textbf{Instrucciones: }
 
 \begin{itemize}
-    \item Eliges un elemento de la lista. Puede ser cualquiera. Lo llamaremos elemento de divisi\'on.
-    \item Buscas la posici\'on que le corresponde en la lista ordenada.
-    \item Acomodas los elementos de la lista a cada lado del elemento de divisi\'on, de manera que a un lado queden todos los menores que \'el y al otro los mayores.
-    \item En este momento el elemento de divisi\'on separa la lista en dos sublistas.
-    \item Realizas esto de para cada sublista mientras éstas tengan un largo mayor que 1.
+    \item El programa \textbf{Selecci\'on} implementa una caja de di\'alogo para seleccionar un archivo a trav\'es del rat\'on en el sistema de archivos local. Deber\'as modificar el c\'odigo para que te permita seleccionar m\'as de un archivo a la vez y devuelva como salida la lista con los nombres y tama\'~nos de los archivos seleccionados.
+    
+    \item El programa \textbf{RecibeArchivo} implementa un servidor de flujo bloqueante que realiza la recepci\'on de un archivo ya predefinido y \'este es recibido utilizando flujos orientados a byte. Deber\'as modificar el c\'odigo para que en lugar de recibir un archivo, este programa permita recibir desde uno hasta cualquier cantidad de archivos
+(secuencialmente). Para esto, primero deber\'a recibir un n\'umero que indique el n\'umero de archivos que ser\'an recibidos, posteriormente, por cada archivo a ser recibido, primero se recibir\'a el nombre del archivo, luego su tama\~no en bytes y despu\'es se recibir\'a el contenido del mismo.
+
+    \item Durante la transferencia de los archivos el usuario deber\'a visualizar el porcentaje de env\'io en pantalla. El programa \textbf{EnviaArchivo} implementa un cliente de flujo bloqueante que envía un archivo ya preestablecido y \'este es enviado usando flujos orientados a byte. Deber\'as modificar el c\'odigo para que en lugar de enviar un
+solo archivo, \'este sea capaz de enviar uno o m\'as archivos que ser\'an seleccionados por el usuario a trav\'es del programa \textbf{Selecci\'on}. 
+
+    \item Durante la transferencia de los archivos el usuario deber\'a visualizar el porcentaje de env\'io en pantalla. El programa \textbf{EnviaArchivo} implementa un cliente de flujo bloqueante que envía un archivo ya preestablecido y \'este es enviado usando flujos orientados a byte. Deber\'as modificar el c\'odigo para que en lugar de enviar un
+solo archivo, \'este sea capaz de enviar uno o m\'as archivos que ser\'an seleccionados por el usuario a trav\'es del programa \textbf{Selecci\'on}. 
+
+\newpage
+
+Cada archivo se enviar\'a de manera individual y el proceso de envío ser\'a de la siguiente
+manera: 
+\newline
+Primero se enviar\'a un n\'umero indicando la cantidad de archivos que ser\'an transferidos. 
+\newline 
+Despu\'es, de manera iterativa, por cada archivo a ser enviado se mandar\'a previamente el nombre de \'este y su tamaño en bytes.
+\newline
+Posteriormente el contenido del archivo.
+
+    \item Realiza pruebas intentando enviar distintos tipos de archivo (im\'agenes, texto, ejecutables), as\'i mismo intenta enviar archivos de distintos tamaños (menos de 100KB, m\'as de 100KB y menos de 10MB, m\'as de 10MB y
+menos de 200MB, m\'as de 200MB y hasta 2GB).
+
+
 \end{itemize}
 
+
+
 %------------------------------------------------------
 
+\section{Pruebas}
+Mostrando caja de di\'alogo:
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=1\textwidth]{img/JFChooser.png}
+	\caption{Caja de di\'alogo para seleccionar archivos.}
+\end{figure}
 
 \newpage
-\textbf{\newline Estrategia Greedy:\newline } 
 
-A continuaci\'on se presenta la estrategia utilizada en la codificaci\'on de Huffman denominada como el m\'etodo voraz o \textit{Greedy Method}. El prop\'osito de un algoritmo voraz es encontrar una soluci\'on, es decir, una asociaci\'on de valores a todas las variables tal que el valor de la funci\'on objetivo sea \'optimo. Para ello sigue un proceso secuencial en el que cada paso toma una decisi\'on . \newline \newline La decisi\'on es localmente \'optima, es decir, ning\'un otro valor de los disponibles para esa variable lograr\'ia  que la funci\'on objetivo tuviera un mejor valor. \newline \newline El siguiente paso del algoritmo voraz es encontrar un problema id\'entido, pero estrictamente menor, al que ten\'ia en el paso anterior y vuelve a plicar la misma funci\'on de selecci\'on para tomar la siguiente decisi\'on. Un criterio importante es nuncaintentar asignar un nuevo valor a la misma variabl, es decir, no regresarse.
+Probando conexi\'on:
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.8\textwidth]{img/Cliente.png}
+	\caption{Cliente.}
+\end{figure}
 
-Pseudoc\'odigo:
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.8\textwidth]{img/Servidor.png}
+	\caption{Servidor.}
+\end{figure}
 
-%------------------------------------------------------
 \newpage
-\section{Experimentaci\'on y Resultados}
 
-En la pr\'actica se implement\'o el algoritmo de codificaci\'on de Huffman, sujeto a los siguientes criterios.\newline \textbf{\newline 1.} Implementar el algoritmo de la codificaci\'on de Huffman con las siguientes condiciones:\newline \newline
-\textbf{Para la Codificaci\'on.}\newline
-Entrada: Un archivo de texto con extensi\'on .txt (original.txt) a codificar.\newline
-Salida: se generaran tres archivos .txt.\newline
-\textbf{Frecuencias.txt: }Mostrar\'a la tabla de frecuencias de los caracteres que
-aparecen en el archivo original.txt. \newline
+Enviando archivos de a lo m\'as 100KB:
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.8\textwidth]{img/Cliente1.png}
+	\caption{Cliente.}
+\end{figure}
 
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.8\textwidth]{img/Servidor1.png}
+	\caption{Servidor.}
+\end{figure}
 
+\newpage
+
+Enviando archivos de a lo m\'as 200MB:
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.8\textwidth]{img/Cliente2.png}
+	\caption{Cliente.}
+\end{figure}
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.8\textwidth]{img/Servidor2.png}
+	\caption{Servidor.}
+\end{figure}
+
+\newpage
+
+Enviando archivos de a lo m\'as 200MB:
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=1\textwidth]{img/ArchivosEnviados.png}
+	\caption{Directorio origen.}
+\end{figure}
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=1\textwidth]{img/ArchivosRecibidos.png}
+	\caption{Directorio destino.}
+\end{figure}
+
+\newpage
+
+Enviando archivos de m\'as 2GB:
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=1\textwidth]{img/CS1.png}
+	\caption{Resumen de la transferencia.}
+\end{figure}
+
+\newpage
 %---------------------------------------------------------------------------------
 		
-\section{Conclusiones}
+\section{Preguntas}
 
-\textbf{\newline Luis Enrique:}
-La compresi\'on de archivos la hemos venido manejando sin tener noci\'on de alg\'un algoritmo que permita \'esto. Con la codificaci\'on de Huffman tenemos una estrategia Greedy para realizarlo, debido a que llega a una soluci\'on local, obteniendo la tabla de frecuencias y para obser el resultado de la compresi\'on pasamos la cadena binaria a su equivalente en \textit{ascii}, tambi\'en se implementa arboles binarios, tema visto en estructuras de datos.\newline \newline
-\textbf{\newline Miguel \'Angel:}
-Cuando necesitamos comprimir informaci\'on el algoritmo de Huffman es \'util pues al generar c\'odigos binarios para cada car\'acter que se repite, no es necesario utilizar todo el c\'odigo ASCII, lo que representa un ahorro significativo en espacio si sólo se utiliza cierto rango de caracteres. Este tipo de compresi\'on de informaci\'on no genera p\'erdida de informaci\'on por lo cual se puede utilizar para cualquier tipo de informaci\'on. 
+\begin{enumerate}
+\item ?`Qu\'e tipo de archivos se enviaron m\'as r\'apido?
+\newline \textbf{R:}
 
-  \newpage
+\item ?`Cu\'al fue el n\'umero m\'aximo de archivos que fue posible enviar a la vez?
+\newline \textbf{R:}
+
+\item ?`Cu\'al fue el tama\~no de archivo m\'as grande que se pudo transferir? ?`por qu\'e?
+\newline \textbf{R:}
+
+\item Si dese\'aramos enviar archivos de tama\~no muy grande, ?`qu\'e cambios ser\'ia necesario hacer con respecto a los tipos de datos usados para medir el tama\~no de los archivos, as\'i como para leer bloques de datos del archivo?
+\newline \textbf{R:}
+
+
+\end{enumerate}
 
 \section{Bibliograf\'ia}
-\begin{thebibliography}{X}
-	
-	\bibitem{Baz} \textsc{ T. H}, Cormen et al, \textit{Introduction to Algorithms}. Ed third. Cambridge: The MIT Press, 2009.
-	
-	\bibitem{bib1} \textsc{J. I}\textit{ An\'alisis y dise\~no de algoritmos:} un enfoque te\'orico y pr\'actico
-	
-	
+\begin{thebibliography}{X}	
 \bibitem{a}  \textit{A method for the construction of minimum-redundancy codes, Proceedings of the I.R.E., sept 1952, pp 1098\-1102}
 
 \bibitem{g} \textit{https://ronnyml.wordpress.com/2009/07/19/quicksort-en-c/}

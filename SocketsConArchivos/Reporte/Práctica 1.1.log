@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6600 64-bit) (preloaded format=pdflatex 2018.2.27)  2 FEB 2019 22:53
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6600 64-bit) (preloaded format=pdflatex 2018.2.27)  3 FEB 2019 01:18
 entering extended mode
 **"./Pr√°ctica 1.1.tex"
 ("Pr√°ctica 1.1.tex"
@@ -254,11 +254,7 @@ Package: verbatim 2014/10/28 v1.5q LaTeX2e package for verbatim enhancements
 \every@verbatim=\toks33
 \verbatim@line=\toks34
 \verbatim@in@stream=\read1
-) ("Pr√°ctica 1.1.aux"
-
-LaTeX Warning: Label `tabla:Tabla1' multiply defined.
-
-)
+) ("Pr√°ctica 1.1.aux")
 \openout1 = `"Pr√°ctica 1.1.aux"'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 74.
@@ -368,136 +364,117 @@ Missing character: There is no ± in font cmr12!
 [1
 
 {C:/Users/Tapia/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 117.
+Underfull \hbox (badness 10000) in paragraph at lines 114--115
 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 114--115
+
+ []
+
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 119.
 
 ("C:\Users\Tapia\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\omscmr.fd"
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 117.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 119.
 
-Underfull \hbox (badness 10000) in paragraph at lines 113--124
-
+Overfull \hbox (1.9679pt too wide) in paragraph at lines 121--123
+[]\OT1/cmr/m/n/12 El pro-grama \OT1/cmr/bx/n/12 RecibeArchivo \OT1/cmr/m/n/12 i
+m-ple-menta un servi-dor de flujo blo-queante
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 113--124
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 113--124
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 113--124
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 113--124
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 128--132
-
- []
-
+Missing character: There is no √ in font cmr12!
+Missing character: There is no ≠ in font cmr12!
+Missing character: There is no √ in font cmr12!
+Missing character: There is no ≠ in font cmr12!
 [2]
-Underfull \hbox (badness 10000) in paragraph at lines 180--187
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 188--189
-
- []
-
-[3]
-Underfull \hbox (badness 10000) in paragraph at lines 195--196
-
- []
-
 Missing character: There is no √ in font cmr12!
-Missing character: There is no ° in font cmr12!
+Missing character: There is no ≠ in font cmr12!
 Missing character: There is no √ in font cmr12!
-Missing character: There is no ° in font cmr12!
+Missing character: There is no ± in font cmr12!
 Missing character: There is no √ in font cmr12!
-Missing character: There is no © in font cmr12!
-[4]
-Underfull \hbox (badness 10000) in paragraph at lines 211--212
+Missing character: There is no ± in font cmr12!
+<img/JFChooser.png, id=14, 321.6015pt x 220.4235pt>
+File: img/JFChooser.png Graphic file (type png)
+<use img/JFChooser.png>
+Package pdftex.def Info: img/JFChooser.png  used on input line 155.
+(pdftex.def)             Requested size: 398.33858pt x 273.02295pt.
+ [3 <./img/JFChooser.png>]
+<img/Cliente.png, id=18, 448.67625pt x 271.0125pt>
+File: img/Cliente.png Graphic file (type png)
+<use img/Cliente.png>
+Package pdftex.def Info: img/Cliente.png  used on input line 164.
+(pdftex.def)             Requested size: 318.67207pt x 192.49051pt.
+<img/Servidor.png, id=19, 448.67625pt x 271.0125pt>
+File: img/Servidor.png Graphic file (type png)
+<use img/Servidor.png>
+Package pdftex.def Info: img/Servidor.png  used on input line 170.
+(pdftex.def)             Requested size: 318.67207pt x 192.49051pt.
+ [4 <./img/Cliente.png> <./img/Servidor.png>]
+<img/Cliente1.png, id=23, 448.67625pt x 270.41025pt>
+File: img/Cliente1.png Graphic file (type png)
+<use img/Cliente1.png>
+Package pdftex.def Info: img/Cliente1.png  used on input line 179.
+(pdftex.def)             Requested size: 318.67207pt x 192.06274pt.
+<img/Servidor1.png, id=24, 448.67625pt x 270.41025pt>
+File: img/Servidor1.png Graphic file (type png)
+<use img/Servidor1.png>
+Package pdftex.def Info: img/Servidor1.png  used on input line 185.
+(pdftex.def)             Requested size: 318.67207pt x 192.06274pt.
 
- []
+[5 <./img/Cliente1.png> <./img/Servidor1.png>]
+<img/Cliente2.png, id=28, 448.67625pt x 270.41025pt>
+File: img/Cliente2.png Graphic file (type png)
+<use img/Cliente2.png>
+Package pdftex.def Info: img/Cliente2.png  used on input line 194.
+(pdftex.def)             Requested size: 318.67207pt x 192.06274pt.
+<img/Servidor2.png, id=29, 448.67625pt x 270.41025pt>
+File: img/Servidor2.png Graphic file (type png)
+<use img/Servidor2.png>
+Package pdftex.def Info: img/Servidor2.png  used on input line 200.
+(pdftex.def)             Requested size: 318.67207pt x 192.06274pt.
+ [6 <./img/Cliente2.png> <./img/Servidor2.png>]
+<img/ArchivosEnviados.png, id=33, 646.8165pt x 275.8305pt>
+File: img/ArchivosEnviados.png Graphic file (type png)
+<use img/ArchivosEnviados.png>
+Package pdftex.def Info: img/ArchivosEnviados.png  used on input line 209.
+(pdftex.def)             Requested size: 398.33858pt x 169.86833pt.
+<img/ArchivosRecibidos.png, id=34, 542.025pt x 275.8305pt>
+File: img/ArchivosRecibidos.png Graphic file (type png)
+<use img/ArchivosRecibidos.png>
+Package pdftex.def Info: img/ArchivosRecibidos.png  used on input line 215.
+(pdftex.def)             Requested size: 398.33858pt x 202.71825pt.
+ [7 <./img/ArchivosEnviados.png> <./img/ArchivosRecibidos.png>]
+<img/CS1.png, id=39, 492.03825pt x 471.56175pt>
+File: img/CS1.png Graphic file (type png)
+<use img/CS1.png>
+Package pdftex.def Info: img/CS1.png  used on input line 225.
+(pdftex.def)             Requested size: 398.33858pt x 381.76144pt.
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 213--214
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 213--214
-
- []
-
-[5]
-Underfull \hbox (badness 10000) in paragraph at lines 221--227
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 221--227
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 221--227
-
- []
-
-Missing character: There is no √ in font cmr12!
-Missing character: There is no ≥ in font cmr12!
-
-Underfull \hbox (badness 10000) in paragraph at lines 233--237
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 233--237
-
- []
-
-[6] [7] ("Pr√°ctica 1.1.aux")
-
-LaTeX Warning: There were multiply-defined labels.
-
- ) 
+[8 <./img/CS1.png>] [9] ("Pr√°ctica 1.1.aux") ) 
 Here is how much of TeX's memory you used:
- 4844 strings out of 493303
- 67999 string characters out of 3129784
- 133393 words of memory out of 3000000
- 8314 multiletter control sequences out of 15000+200000
- 10852 words of font info for 40 fonts, out of 3000000 for 9000
+ 4890 strings out of 493303
+ 68953 string characters out of 3129784
+ 133340 words of memory out of 3000000
+ 8348 multiletter control sequences out of 15000+200000
+ 10551 words of font info for 39 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 41i,9n,35p,981b,245s stack positions out of 5000i,500n,10000p,200000b,50000s
-<C:/Users/Tapia/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts
-/cm/cmbx12.pfb><C:/Users/Tapia/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/pu
-blic/amsfonts/cm/cmcsc10.pfb><C:/Users/Tapia/AppData/Local/Programs/MiKTeX 2.9/
-fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/Tapia/AppData/Local/Program
-s/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/Tapia/AppData/
-Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/Ta
-pia/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb>
-<C:/Users/Tapia/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/c
-m/cmr8.pfb><C:/Users/Tapia/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public
-/amsfonts/cm/cmsl10.pfb><C:/Users/Tapia/AppData/Local/Programs/MiKTeX 2.9/fonts
-/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/Tapia/AppData/Local/Programs/MiK
-TeX 2.9/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Users/Tapia/AppData/Local
-/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on "Pr√°ctica 1.1.pdf" (7 pages, 137857 bytes).
+ 41i,7n,35p,474b,242s stack positions out of 5000i,500n,10000p,200000b,50000s
+<C:/Users/Tapia/AppData/Local/Pr
+ograms/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/Tapia/App
+Data/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><C:/U
+sers/Tapia/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmm
+i12.pfb><C:/Users/Tapia/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/am
+sfonts/cm/cmr12.pfb><C:/Users/Tapia/AppData/Local/Programs/MiKTeX 2.9/fonts/typ
+e1/public/amsfonts/cm/cmsl10.pfb><C:/Users/Tapia/AppData/Local/Programs/MiKTeX 
+2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/Tapia/AppData/Local/Pro
+grams/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti12.pfb>
+Output written on "Pr√°ctica 1.1.pdf" (9 pages, 336236 bytes).
 PDF statistics:
  70 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 51 words of extra memory for PDF output out of 10000 (max. 10000000)
 

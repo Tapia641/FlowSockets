@@ -8,7 +8,6 @@ import java.io.FileOutputStream;
 import java.io.InputStreamReader;
 import java.net.ServerSocket;
 import java.net.Socket;
-import javax.swing.JOptionPane;
 
 public class STCPBArchivo {
     public static void main(String[] args) {
