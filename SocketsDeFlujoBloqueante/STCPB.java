@@ -1,4 +1,8 @@
 
+/*
+ALUMNO: HERNANDEZ TAPIA LUIS ENRIQUE
+ */
+
 import java.io.PrintWriter;
 import java.net.ServerSocket;
 import java.net.Socket;
@@ -46,7 +50,7 @@ public class STCPB {
                 salida.close();
                 entrada.close();
                 socketCliente.close();
-                //NOTA: EL SOCKET DEL SERVIDOR NUNCA SE CIERRA socketServidor.close();
+                // NOTA: EL SOCKET DEL SERVIDOR NUNCA SE CIERRA socketServidor.close();
             }
         } catch (Exception e) {
             e.printStackTrace();
