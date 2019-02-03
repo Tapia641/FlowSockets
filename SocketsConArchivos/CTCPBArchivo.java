@@ -22,38 +22,48 @@ public class CTCPBArchivo {
             int port = Integer.parseInt(teclado.readLine());
 
             Socket socketCliente = new Socket(host, port);
+
+            /* ACTIVAMOS MULTIPLE SELECCION */
             JFileChooser jf = new JFileChooser();
+            jf.setMultiSelectionEnabled(true);;
+
             int r = jf.showOpenDialog(null);
+
             if (r == JFileChooser.APPROVE_OPTION) {
-                File f = jf.getSelectedFile();
-                String archivo = f.getAbsolutePath();
-                String nombre = f.getName();
-                long tam = f.length();
-                DataOutputStream dos = new DataOutputStream(socketCliente.getOutputStream());
-                DataInputStream dis = new DataInputStream(new FileInputStream(archivo));
 
-                dos.writeUTF(nombre);
-                dos.flush();
-                dos.writeLong(tam);
-                dos.flush();
+                File[] f = jf.getSelectedFiles();
 
-                /* SECCION PARA EL ENVIO DEL ARCHIVO */
-                byte[] b = new byte[1024];
-                long enviado = 0;
-                int porcentaje, n;
-
-                while (enviado < tam) {
-                    n = dis.read(b);
-                    dos.write(b);
+                for (int i = 0; i < f.length; i++) {
+                    /* OBTENEMOS DATOS DE CADA ARCHIVO */
+                    String archivo = f[i].getAbsolutePath();
+                    String nombre = f[i].getName();
+                    long tam = f[i].length();
+                    DataOutputStream dos = new DataOutputStream(socketCliente.getOutputStream());
+                    DataInputStream dis = new DataInputStream(new FileInputStream(archivo));
+                    dos.writeUTF(nombre);
                     dos.flush();
-                    enviado += n;
-                    porcentaje = (int)(enviado*100/tam);
-                    System.out.println("Enviado: " + porcentaje + "%\r");
-                }
+                    dos.writeLong(tam);
+                    dos.flush();
 
-                System.out.println("Archivo enviado");
-                dos.close();
-                dis.close();
+                    /* SECCION PARA EL ENVIO DEL ARCHIVO */
+                    byte[] b = new byte[1024];
+                    long enviado = 0;
+                    int porcentaje, n;
+
+                    /* CALCULAMOS EL PORCENTAJE */
+                    while (enviado < tam) {
+                        n = dis.read(b);
+                        dos.write(b);
+                        dos.flush();
+                        enviado += n;
+                        porcentaje = (int) (enviado * 100 / tam);
+                        System.out.println("Enviado: " + porcentaje + "%\r");
+                    }
+
+                    System.out.println("Archivo enviado");
+                    dos.close();
+                    dis.close();
+                }
                 socketCliente.close();
             }
 

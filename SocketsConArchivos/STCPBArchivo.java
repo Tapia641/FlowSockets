@@ -47,7 +47,9 @@ public class STCPBArchivo {
                 dis.close();
                 socketCliente.close();
             }
-        } catch (Exception e) {
+        } catch (
+
+        Exception e) {
             e.printStackTrace();
         }
     }
