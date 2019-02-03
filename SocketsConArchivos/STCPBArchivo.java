@@ -4,6 +4,8 @@ import java.io.FileOutputStream;
 import java.net.ServerSocket;
 import java.net.Socket;
 
+import javax.swing.JOptionPane;
+
 public class STCPBArchivo {
     public static void main(String[] args) {
         ServidorArchivo();
@@ -22,29 +24,34 @@ public class STCPBArchivo {
                         "Conexion establecida desde " + socketCliente.getInetAddress() + ":" + socketCliente.getPort());
 
                 /* ESTABLECEMOS EL CANAL DE ENTRADA */
-                DataInputStream dis = new DataInputStream(socketCliente.getInputStream());
+                DataInputStream entrada = new DataInputStream(socketCliente.getInputStream());
                 byte[] b = new byte[1024];
-                String nombre = dis.readUTF();
+                String nombre = entrada.readUTF();
                 System.out.println("Recibimos el archivo " + nombre);
-                long tam = dis.readLong();
-                DataOutputStream dos = new DataOutputStream(new FileOutputStream(nombre));
+                long tam = entrada.readLong();
+                DataOutputStream salida = new DataOutputStream(new FileOutputStream(nombre));
 
                 /* SECCION PARA RECIBIR EL ARCHIVO */
                 long recibido = 0;
                 int n, porcentaje;
+
+                n = entrada.read(b);
+                JOptionPane.showMessageDialog(null, n);
+                
                 while (recibido < tam) {
-                    n = dis.read(b);
-                    dos.write(b, 0, n);
-                    dos.flush();
+                    n = entrada.read(b);
+                    salida.write(b, 0, n);
+                    salida.flush();
 
                     /* PORCENTAJE */
                     recibido += n;
                     porcentaje = (int) (recibido * 100 / tam);
                     System.out.println("Recibido: " + porcentaje + "%\r");
                 }
+
                 System.out.println("Archivo recibido.");
-                dos.close();
-                dis.close();
+                salida.close();
+                entrada.close();
                 socketCliente.close();
             }
         } catch (

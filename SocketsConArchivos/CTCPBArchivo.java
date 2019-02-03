@@ -15,18 +15,21 @@ public class CTCPBArchivo {
 
     public static void ClienteArchivo() {
         try {
+            /* REALIZAMOS LA CONFIGURACION ADECUADA */
             BufferedReader teclado = new BufferedReader(new InputStreamReader(System.in));
             System.out.println("Escriba la direccion del servidor: ");
             String host = teclado.readLine();
             System.out.println("Escriba el puerto: ");
             int port = Integer.parseInt(teclado.readLine());
 
+            /* INICIALIZAMOS EL SOCKET */
             Socket socketCliente = new Socket(host, port);
 
             /* ACTIVAMOS MULTIPLE SELECCION */
             JFileChooser jf = new JFileChooser();
-            jf.setMultiSelectionEnabled(true);;
+            jf.setMultiSelectionEnabled(true);
 
+            /* MOSTRAMOS EL FILECHOOSER */
             int r = jf.showOpenDialog(null);
 
             if (r == JFileChooser.APPROVE_OPTION) {
@@ -35,11 +38,14 @@ public class CTCPBArchivo {
 
                 for (int i = 0; i < f.length; i++) {
                     /* OBTENEMOS DATOS DE CADA ARCHIVO */
+
                     String archivo = f[i].getAbsolutePath();
                     String nombre = f[i].getName();
                     long tam = f[i].length();
+
                     DataOutputStream dos = new DataOutputStream(socketCliente.getOutputStream());
                     DataInputStream dis = new DataInputStream(new FileInputStream(archivo));
+
                     dos.writeUTF(nombre);
                     dos.flush();
                     dos.writeLong(tam);
