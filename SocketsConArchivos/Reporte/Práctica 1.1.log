@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6600 64-bit) (preloaded format=pdflatex 2018.2.27)  3 FEB 2019 01:18
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6600 64-bit) (preloaded format=pdflatex 2018.2.27)  4 FEB 2019 19:07
 entering extended mode
 **"./Pr√°ctica 1.1.tex"
 ("Pr√°ctica 1.1.tex"
@@ -359,8 +359,6 @@ LaTeX Font Info:    Try loading font information for U+msb on input line 86.
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 \c@Theorem=\count124
-Missing character: There is no √ in font cmr12!
-Missing character: There is no ± in font cmr12!
 [1
 
 {C:/Users/Tapia/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]
@@ -388,21 +386,18 @@ m-ple-menta un servi-dor de flujo blo-queante
 
 Missing character: There is no √ in font cmr12!
 Missing character: There is no ≠ in font cmr12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no ≠ in font cmr12!
 [2]
-Missing character: There is no √ in font cmr12!
-Missing character: There is no ≠ in font cmr12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no ± in font cmr12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no ± in font cmr12!
+Overfull \hbox (2.7892pt too wide) in paragraph at lines 141--143
+\OT1/cmr/m/n/12 texto, eje-cuta-bles), as mismo in-tenta en-viar archivos de 
+dis-tin-tos tama~nos
+ []
+
 <img/JFChooser.png, id=14, 321.6015pt x 220.4235pt>
 File: img/JFChooser.png Graphic file (type png)
 <use img/JFChooser.png>
 Package pdftex.def Info: img/JFChooser.png  used on input line 155.
 (pdftex.def)             Requested size: 398.33858pt x 273.02295pt.
- [3 <./img/JFChooser.png>]
+[3 <./img/JFChooser.png>]
 <img/Cliente.png, id=18, 448.67625pt x 271.0125pt>
 File: img/Cliente.png Graphic file (type png)
 <use img/Cliente.png>
@@ -424,8 +419,7 @@ File: img/Servidor1.png Graphic file (type png)
 <use img/Servidor1.png>
 Package pdftex.def Info: img/Servidor1.png  used on input line 185.
 (pdftex.def)             Requested size: 318.67207pt x 192.06274pt.
-
-[5 <./img/Cliente1.png> <./img/Servidor1.png>]
+ [5 <./img/Cliente1.png> <./img/Servidor1.png>]
 <img/Cliente2.png, id=28, 448.67625pt x 270.41025pt>
 File: img/Cliente2.png Graphic file (type png)
 <use img/Cliente2.png>
@@ -453,26 +447,31 @@ File: img/CS1.png Graphic file (type png)
 <use img/CS1.png>
 Package pdftex.def Info: img/CS1.png  used on input line 225.
 (pdftex.def)             Requested size: 398.33858pt x 381.76144pt.
+ [8 <./img/CS1.png>]
+Overfull \hbox (2.87172pt too wide) in paragraph at lines 244--246
+\OT1/cmr/bx/n/12 R: \OT1/cmr/m/n/12 Cam-biar el numero de tama~no de los data-
+gra-mas tanto para el \OT1/cmr/bx/n/12 Cliente
+ []
 
-[8 <./img/CS1.png>] [9] ("Pr√°ctica 1.1.aux") ) 
+[9] ("Pr√°ctica 1.1.aux") ) 
 Here is how much of TeX's memory you used:
- 4890 strings out of 493303
- 68953 string characters out of 3129784
- 133340 words of memory out of 3000000
- 8348 multiletter control sequences out of 15000+200000
+ 4888 strings out of 493303
+ 68942 string characters out of 3129784
+ 133337 words of memory out of 3000000
+ 8346 multiletter control sequences out of 15000+200000
  10551 words of font info for 39 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 41i,7n,35p,474b,242s stack positions out of 5000i,500n,10000p,200000b,50000s
-<C:/Users/Tapia/AppData/Local/Pr
-ograms/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/Tapia/App
-Data/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><C:/U
-sers/Tapia/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmm
-i12.pfb><C:/Users/Tapia/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/am
-sfonts/cm/cmr12.pfb><C:/Users/Tapia/AppData/Local/Programs/MiKTeX 2.9/fonts/typ
-e1/public/amsfonts/cm/cmsl10.pfb><C:/Users/Tapia/AppData/Local/Programs/MiKTeX 
-2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/Tapia/AppData/Local/Pro
-grams/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti12.pfb>
-Output written on "Pr√°ctica 1.1.pdf" (9 pages, 336236 bytes).
+ 41i,7n,35p,474b,241s stack positions out of 5000i,500n,10000p,200000b,50000s
+<C:/Users/Tapia/AppData/Local/Programs/MiKTeX 2.9/fo
+nts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/Tapia/AppData/Local/Programs/
+MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><C:/Users/Tapia/AppData/L
+ocal/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/Ta
+pia/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb>
+<C:/Users/Tapia/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/c
+m/cmsl10.pfb><C:/Users/Tapia/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/publ
+ic/amsfonts/cm/cmsy10.pfb><C:/Users/Tapia/AppData/Local/Programs/MiKTeX 2.9/fon
+ts/type1/public/amsfonts/cm/cmti12.pfb>
+Output written on "Pr√°ctica 1.1.pdf" (9 pages, 336904 bytes).
 PDF statistics:
  70 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)

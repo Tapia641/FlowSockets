@@ -103,7 +103,7 @@ backgroundcolor=\color{gray75},
 \section{Introducci\'on}
 
 El env\'io de archivos a trav\'es de la red es una caracter\'istica importante para la gran mayor\'ia de las aplicaciones que hoy d\'ia se utilizan (blogs, redes sociales, mensajer\'ia instant\'anea, declaraci\'on de impuestos, educaci\'on en l\'inea, etc.), sin embargo, no todas las aplicaciones disponibles permiten el env\'io de archivos de gran tama\~no (p.e. El correo electr\'onico no permite enviar archivos de m\'as de 10 o 20 MB).
-Esto hace necesario el desarrollo de aplicaciones que permitan transferir archivos sin importar el tamaño de \'estos.
+Esto hace necesario el desarrollo de aplicaciones que permitan transferir archivos sin importar el tama\~no de \'estos.
 
 \newpage
 %------------------------------------------------------
@@ -116,7 +116,7 @@ A partir de los programas \textbf{CArchivo} y \textbf{SArchivo} que te ser\'an p
 \textbf{Instrucciones: }
 
 \begin{itemize}
-    \item El programa \textbf{Selecci\'on} implementa una caja de di\'alogo para seleccionar un archivo a trav\'es del rat\'on en el sistema de archivos local. Deber\'as modificar el c\'odigo para que te permita seleccionar m\'as de un archivo a la vez y devuelva como salida la lista con los nombres y tama\'~nos de los archivos seleccionados.
+    \item El programa \textbf{Selecci\'on} implementa una caja de di\'alogo para seleccionar un archivo a trav\'es del rat\'on en el sistema de archivos local. Deber\'as modificar el c\'odigo para que te permita seleccionar m\'as de un archivo a la vez y devuelva como salida la lista con los nombres y tama\~nos de los archivos seleccionados.
     
     \item El programa \textbf{RecibeArchivo} implementa un servidor de flujo bloqueante que realiza la recepci\'on de un archivo ya predefinido y \'este es recibido utilizando flujos orientados a byte. Deber\'as modificar el c\'odigo para que en lugar de recibir un archivo, este programa permita recibir desde uno hasta cualquier cantidad de archivos
 (secuencialmente). Para esto, primero deber\'a recibir un n\'umero que indique el n\'umero de archivos que ser\'an recibidos, posteriormente, por cada archivo a ser recibido, primero se recibir\'a el nombre del archivo, luego su tama\~no en bytes y despu\'es se recibir\'a el contenido del mismo.
@@ -124,21 +124,21 @@ A partir de los programas \textbf{CArchivo} y \textbf{SArchivo} que te ser\'an p
     \item Durante la transferencia de los archivos el usuario deber\'a visualizar el porcentaje de env\'io en pantalla. El programa \textbf{EnviaArchivo} implementa un cliente de flujo bloqueante que envía un archivo ya preestablecido y \'este es enviado usando flujos orientados a byte. Deber\'as modificar el c\'odigo para que en lugar de enviar un
 solo archivo, \'este sea capaz de enviar uno o m\'as archivos que ser\'an seleccionados por el usuario a trav\'es del programa \textbf{Selecci\'on}. 
 
-    \item Durante la transferencia de los archivos el usuario deber\'a visualizar el porcentaje de env\'io en pantalla. El programa \textbf{EnviaArchivo} implementa un cliente de flujo bloqueante que envía un archivo ya preestablecido y \'este es enviado usando flujos orientados a byte. Deber\'as modificar el c\'odigo para que en lugar de enviar un
+    \item Durante la transferencia de los archivos el usuario deber\'a visualizar el porcentaje de env\'io en pantalla. El programa \textbf{EnviaArchivo} implementa un cliente de flujo bloqueante que env\'ia un archivo ya preestablecido y \'este es enviado usando flujos orientados a byte. Deber\'as modificar el c\'odigo para que en lugar de enviar un
 solo archivo, \'este sea capaz de enviar uno o m\'as archivos que ser\'an seleccionados por el usuario a trav\'es del programa \textbf{Selecci\'on}. 
 
 \newpage
 
-Cada archivo se enviar\'a de manera individual y el proceso de envío ser\'a de la siguiente
+Cada archivo se enviar\'a de manera individual y el proceso de env\'io ser\'a de la siguiente
 manera: 
 \newline
 Primero se enviar\'a un n\'umero indicando la cantidad de archivos que ser\'an transferidos. 
 \newline 
-Despu\'es, de manera iterativa, por cada archivo a ser enviado se mandar\'a previamente el nombre de \'este y su tamaño en bytes.
+Despu\'es, de manera iterativa, por cada archivo a ser enviado se mandar\'a previamente el nombre de \'este y su tama\~no en bytes.
 \newline
 Posteriormente el contenido del archivo.
 
-    \item Realiza pruebas intentando enviar distintos tipos de archivo (im\'agenes, texto, ejecutables), as\'i mismo intenta enviar archivos de distintos tamaños (menos de 100KB, m\'as de 100KB y menos de 10MB, m\'as de 10MB y
+    \item Realiza pruebas intentando enviar distintos tipos de archivo (im\'agenes, texto, ejecutables), as\'i mismo intenta enviar archivos de distintos tama\~nos (menos de 100KB, m\'as de 100KB y menos de 10MB, m\'as de 10MB y
 menos de 200MB, m\'as de 200MB y hasta 2GB).
 
 
@@ -233,24 +233,23 @@ Enviando archivos de m\'as 2GB:
 
 \begin{enumerate}
 \item ?`Qu\'e tipo de archivos se enviaron m\'as r\'apido?
-\newline \textbf{R:}
+\newline \textbf{R:} Los de menor cantidad de bytes, ejemplificando algunos como JPG, PNG, MP4.
 
 \item ?`Cu\'al fue el n\'umero m\'aximo de archivos que fue posible enviar a la vez?
-\newline \textbf{R:}
+\newline \textbf{R:} A la vez 1, pero consecutivamente realic\'e pruebas con hasta 300 archivos en formato JPG, por lo cual no tuve ning\'un n\'umero m\'aximo de archivos, es decir, pude env\'iar de forma ilimitada cualquier cantidad de archivos.
 
 \item ?`Cu\'al fue el tama\~no de archivo m\'as grande que se pudo transferir? ?`por qu\'e?
-\newline \textbf{R:}
+\newline \textbf{R:} Pude env\'iar archivos de hasta 4GB sin ning\'un problema, revisando el c\'odigo, ser\'ia aproximadamente el tama\~no de un \textbf{Long} en Java.
 
 \item Si dese\'aramos enviar archivos de tama\~no muy grande, ?`qu\'e cambios ser\'ia necesario hacer con respecto a los tipos de datos usados para medir el tama\~no de los archivos, as\'i como para leer bloques de datos del archivo?
-\newline \textbf{R:}
+\newline \textbf{R:} Cambiar el n\'umero de tama\~no de los datagramas tanto para el \textbf{Cliente} como para el \textbf{Servidor}, ya que lo tenemos en 1024.
 
 
 \end{enumerate}
 
 \section{Bibliograf\'ia}
 \begin{thebibliography}{X}	
-\bibitem{a}  \textit{A method for the construction of minimum-redundancy codes, Proceedings of the I.R.E., sept 1952, pp 1098\-1102}
+\bibitem{a}  \textit{Kenneth L. Calvert TCP$/$IP Sockets in Java$:$ Practical Guide for Programmers. 2nd Edition. Publisher: Morgan Kaufmann}
 
-\bibitem{g} \textit{https://ronnyml.wordpress.com/2009/07/19/quicksort-en-c/}
 \end{thebibliography}
 \end{document}
