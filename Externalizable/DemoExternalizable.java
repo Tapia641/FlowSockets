@@ -20,7 +20,7 @@ public class DemoExternalizable {
         /* LOS GUARDAMOS EN UN .OUT */
         ObjectOutputStream objetoSalida = new ObjectOutputStream(new FileOutputStream("objetos.out"));
         objetoSalida.writeObject(lista);
-        objetoSalida.close();
+        objetoSalida.close();   
 
         /* LEEMOS EL .OUT */
         System.out.println("\nRecuperando objeto");
