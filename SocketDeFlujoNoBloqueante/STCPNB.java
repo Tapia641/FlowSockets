@@ -1,19 +1,18 @@
 import java.io.IOException;
 import java.net.InetSocketAddress;
 import java.nio.channels.SelectionKey;
+import java.nio.channels.Selector;
 import java.nio.channels.ServerSocketChannel;
+import java.nio.ByteBuffer;
 import java.nio.channels.SocketChannel;
 import java.util.Iterator;
-
-import com.sun.corba.se.impl.ior.ByteBuffer;
-import com.sun.corba.se.pept.transport.Selector;
 
 public class STCPNB {
     public static void main(String[] args) {
         iniciarServidor();
     }
 
-    public static void inicarServidor() {
+    public static void iniciarServidor() {
         try {
             String eco = "";
             int port = 9999;
@@ -27,12 +26,12 @@ public class STCPNB {
             Selector selector = Selector.open();
 
             // LO LIGAMOS CON EL SERVIDOR QUE SOLO ACEPTA CONEXCIONES
-            servidorSocket.register(false, SelectionKey.OP_ACCEPT);
+            servidorSocket.register(selector, SelectionKey.OP_ACCEPT);
 
             while (true) {
 
                 // BLOQUEO, ESPERANDO QUE OCURRA UN EVENTO
-                selector.selector();
+                selector.select();
 
                 // CONSTRUIMOS UN ITERATOR A PARTIR DE TODAS LAS CONEXIONES
                 Iterator<SelectionKey> it = selector.selectedKeys().iterator();
@@ -60,8 +59,7 @@ public class STCPNB {
                         // LO LIGAMOS AL SELECTOR, PUEDE LLER O ESCRIBIR
                         clienteSocket.register(selector, SelectionKey.OP_READ | SelectionKey.OP_WRITE);
                         continue;
-                    }
-                    if (k.isReadable()) {
+                    } else if (k.isReadable()) {
                         try {
                             // RECUPERO EL CANAL QUE ESTA TRABAJANDO
                             SocketChannel canal = (SocketChannel) k.channel();
@@ -93,12 +91,10 @@ public class STCPNB {
                         } catch (IOException io) {
                             continue;
                         }
-                    }
-
-                    //SI ES UNA ESCRITURA
+                    } else // SI ES UNA ESCRITURA
                     if (k.isWritable()) {
                         try {
-                            //RECUPERO EL CANAL DEL ITERATOR
+                            // RECUPERO EL CANAL DEL ITERATOR
                             SocketChannel canal = (SocketChannel) k.channel();
                             ByteBuffer bb = ByteBuffer.wrap(eco.getBytes());
                             canal.write(bb);
